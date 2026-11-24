@@ -30,9 +30,13 @@ function MyFooter() {
                📞 0212 123 45 67</p>
           </Col>
         </Row>
-        <hr />
-        <div className="text-center">
+       <hr />
+        <div className="text-center d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
           <p className="mb-0">&copy; 2024 Tüm Hakları Saklıdır.</p>
+        
+          <Link to="/kaynakca" className="text-light text-decoration-underline" style={{ fontSize: '0.9rem' }}>
+            Yasal Bildirim ve Kaynakça
+          </Link>
         </div>
       </Container>
     </footer>

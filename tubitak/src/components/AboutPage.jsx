@@ -3,8 +3,18 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 
 function AboutPage() {
+
+  // Mail adresini tooltip içinde göstermek için yardımcı fonksiyon
+  const renderTooltip = (email) => (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      {email}
+    </Tooltip>
+  );
+
   return (
     <Container className="mt-5 mb-5">
       {/* ÜST KISIM: VİZYON */}
@@ -30,14 +40,26 @@ function AboutPage() {
           <Card className="text-center shadow-sm border-0 h-100">
             <Card.Body>
               <div className="mb-3">
-                 {/* Profil resmi yerine baş harflerden oluşan avatar koydum */}
                 <Image 
                   src="https://ui-avatars.com/api/?name=Ismail+Butun&background=0D6EFD&color=fff&size=128" 
                   roundedCircle 
                   thumbnail 
                 />
               </div>
-              <Card.Title>Doç. Dr. İsmail BÜTÜN</Card.Title>
+              
+              {/* İsmail Bütün - Mail Entegrasyonu */}
+              <OverlayTrigger
+                placement="top"
+                delay={{ show: 250, hide: 400 }}
+                overlay={renderTooltip('ibutun@sakarya.edu.tr')}
+              >
+                <Card.Title>
+                  <a href="mailto:ibutun@sakarya.edu.tr" className="text-decoration-none text-dark stretched-link">
+                    Doç. Dr. İsmail BÜTÜN
+                  </a>
+                </Card.Title>
+              </OverlayTrigger>
+
               <Card.Subtitle className="mb-2 text-muted">Proje Danışmanı</Card.Subtitle>
               <Card.Text>
                 Sakarya Üniversitesi<br/>
@@ -51,45 +73,94 @@ function AboutPage() {
       {/* PROJE EKİBİ */}
       <h3 className="text-center mb-4">Proje Ekibimiz</h3>
       <Row xs={1} md={2} lg={4} className="g-4">
-        {/* 1. Üye */}
+        {/* 1. Üye: Kerem Berk ŞENOL (Mail adresi verilmediği için standart bırakıldı) */}
         <Col>
           <Card className="text-center h-100 shadow-sm border-0 hover-effect">
             <Card.Body>
               <Image src="https://ui-avatars.com/api/?name=Kerem+Berk&background=random&size=100" roundedCircle className="mb-3" />
+            
+             <OverlayTrigger
+                placement="top"
+                delay={{ show: 250, hide: 400 }}
+                overlay={renderTooltip('keremberksenol@gmail.com')}
+              >
+                <Card.Title style={{fontSize: '1.1rem'}}>
+                    <a href="mailto:keremberksenol@gmail.com" className="text-decoration-none text-dark stretched-link">
+                     
+                    </a>
+                </Card.Title>
+              </OverlayTrigger>
+            
               <Card.Title style={{fontSize: '1.1rem'}}>Kerem Berk ŞENOL</Card.Title>
               <Card.Text className="small text-muted">Proje Yürütücüsü</Card.Text>
             </Card.Body>
           </Card>
         </Col>
 
-        {/* 2. Üye */}
+        {/* 2. Üye: Ali Samet ARMAĞAN */}
         <Col>
           <Card className="text-center h-100 shadow-sm border-0 hover-effect">
             <Card.Body>
               <Image src="https://ui-avatars.com/api/?name=Ali+Samet&background=random&size=100" roundedCircle className="mb-3" />
-              <Card.Title style={{fontSize: '1.1rem'}}>Ali Samet ARMAĞAN</Card.Title>
+              
+              <OverlayTrigger
+                placement="top"
+                delay={{ show: 250, hide: 400 }}
+                overlay={renderTooltip('ali.samet.ar@gmail.com')}
+              >
+                <Card.Title style={{fontSize: '1.1rem'}}>
+                    <a href="mailto:ali.samet.ar@gmail.com" className="text-decoration-none text-dark stretched-link">
+                        Ali Samet ARMAĞAN
+                    </a>
+                </Card.Title>
+              </OverlayTrigger>
+
               <Card.Text className="small text-muted">Araştırmacı</Card.Text>
             </Card.Body>
           </Card>
         </Col>
 
-        {/* 3. Üye */}
+        {/* 3. Üye: Abdurrahman AKÇİT */}
         <Col>
           <Card className="text-center h-100 shadow-sm border-0 hover-effect">
             <Card.Body>
               <Image src="https://ui-avatars.com/api/?name=Abdurrahman+Akcit&background=random&size=100" roundedCircle className="mb-3" />
-              <Card.Title style={{fontSize: '1.1rem'}}>Abdurrahman AKÇİT</Card.Title>
+              
+              <OverlayTrigger
+                placement="top"
+                delay={{ show: 250, hide: 400 }}
+                overlay={renderTooltip('abdurrahman.akcit@ogr.sakarya.edu.tr')}
+              >
+                 <Card.Title style={{fontSize: '1.1rem'}}>
+                    <a href="mailto:abdurrahman.akcit@ogr.sakarya.edu.tr" className="text-decoration-none text-dark stretched-link">
+                        Abdurrahman AKÇİT
+                    </a>
+                </Card.Title>
+              </OverlayTrigger>
+
               <Card.Text className="small text-muted">Araştırmacı</Card.Text>
             </Card.Body>
           </Card>
         </Col>
 
-        {/* 4. Üye */}
+        {/* 4. Üye: Betül GÜMÜŞ */}
         <Col>
           <Card className="text-center h-100 shadow-sm border-0 hover-effect">
             <Card.Body>
               <Image src="https://ui-avatars.com/api/?name=Betul+Gumus&background=random&size=100" roundedCircle className="mb-3" />
-              <Card.Title style={{fontSize: '1.1rem'}}>Betül GÜMÜŞ</Card.Title>
+              
+              <OverlayTrigger
+                placement="top"
+                delay={{ show: 250, hide: 400 }}
+                overlay={renderTooltip('betullgumussss@gmail.com')}
+              >
+                <Card.Title style={{fontSize: '1.1rem'}}>
+                    <a href="mailto:betullgumussss@gmail.com" className="text-decoration-none text-dark stretched-link">
+                        Betül GÜMÜŞ
+                    </a>
+                </Card.Title>
+              </OverlayTrigger>
+
               <Card.Text className="small text-muted">Araştırmacı</Card.Text>
             </Card.Body>
           </Card>
